@@ -1,0 +1,8 @@
+# Zależności dla projektu anonimizacji
+spacy>=3.0.0
+gradio>=3.0.0
+rich>=10.0.0
+
+# Po instalacji powyższych pakietów,
+# pobierz model językowy dla języka polskiego:
+# python -m spacy download pl_core_news_lg
