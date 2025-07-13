@@ -4,6 +4,10 @@ from core.anonymizer import anonymize_text
 import tempfile
 import json
 from core.profile_config import PROFILES
+from core.branding import (
+    APP_TITLE, L_FILE_UPLOAD, L_PROFILE, L_ANONYMIZE_BTN, L_OUTPUT_TEXT,
+    L_SUBSTITUTION_MAP, L_DOWNLOAD_FILES
+)
 
 # Wyłącz analytics
 os.environ['GRADIO_ANALYTICS_ENABLED'] = 'False'
@@ -67,26 +71,26 @@ def create_ui():
         theme=gr.themes.Soft()
     ) as demo:
         
-        gr.Markdown("# Janusz Danych Rodo - Anonimizator Umów Notarialnych")
+        gr.Markdown(f"# {APP_TITLE}")
         
         # Wiersz 1: Wgranie pliku, profil, przycisk
         with gr.Row():
             file_input = gr.File(
-                label="Wgraj plik (.txt, .md)",
+                label=L_FILE_UPLOAD,
                 type="binary",
                 file_count="single"
             )
             profile_dropdown = gr.Dropdown(
                 choices=list(PROFILES.keys()),
                 value="pseudonymized",
-                label="Profil Anonimizacji"
+                label=L_PROFILE
             )
-            submit_btn = gr.Button("Anonimizuj")
+            submit_btn = gr.Button(L_ANONYMIZE_BTN)
         
         # Wiersz 2: Tekst zanonimizowany
         with gr.Row():
             output_text = gr.Textbox(
-                label="Tekst zanonimizowany",
+                label=L_OUTPUT_TEXT,
                 lines=15,
                 interactive=True
             )
@@ -94,13 +98,13 @@ def create_ui():
         # Wiersz 3: Słownik mapowań i pobieranie
         with gr.Row():
             with gr.Column():
-                output_map = gr.JSON(label="Słownik mapowań")
+                output_map = gr.JSON(label=L_SUBSTITUTION_MAP)
             
             with gr.Column():
-                gr.Markdown("### Pobierz pliki")
+                gr.Markdown(f"### {L_DOWNLOAD_FILES}")
                 with gr.Group():
-                    download_map_btn = gr.File(label="Słownik mapowań")
-                    download_text_btn = gr.File(label="Tekst anonimizowany")
+                    download_map_btn = gr.File(label=L_SUBSTITUTION_MAP)
+                    download_text_btn = gr.File(label=L_OUTPUT_TEXT)
         
         submit_btn.click(
             fn=AnonymizerInterface.process_file,

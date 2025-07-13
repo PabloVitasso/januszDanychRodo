@@ -8,50 +8,54 @@ from PySide6.QtWidgets import (
 
 from core.anonymizer import anonymize_text
 from core.profile_config import PROFILES
+from core.branding import (
+    APP_TITLE, L_FILE_UPLOAD, L_PROFILE, L_ANONYMIZE_BTN, L_OUTPUT_TEXT,
+    L_SUBSTITUTION_MAP, L_SAVE_MAP_BTN, L_SAVE_TEXT_BTN
+)
 
 
 class AnonymizerGUI(QWidget):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Janusz Danych RODO – Anonimizator Umów Notarialnych")
+        self.setWindowTitle(APP_TITLE)
         self.setMinimumWidth(800)
         
         layout = QVBoxLayout()
 
         # Wybór pliku
-        self.load_button = QPushButton("Wgraj plik (.txt, .md)")
+        self.load_button = QPushButton(L_FILE_UPLOAD)
         self.load_button.clicked.connect(self.load_file)
         layout.addWidget(self.load_button)
 
         # Profil anonimizacji
         self.profile_dropdown = QComboBox()
         self.profile_dropdown.addItems(PROFILES.keys())
-        layout.addWidget(QLabel("Profil Anonimizacji"))
+        layout.addWidget(QLabel(L_PROFILE))
         layout.addWidget(self.profile_dropdown)
 
         # Przycisk anonimizacji
-        self.anon_button = QPushButton("Anonimizuj")
+        self.anon_button = QPushButton(L_ANONYMIZE_BTN)
         self.anon_button.clicked.connect(self.run_anonymization)
         layout.addWidget(self.anon_button)
 
         # Wyjście: zanonimizowany tekst
         self.output_text = QTextEdit()
         self.output_text.setReadOnly(False)
-        layout.addWidget(QLabel("Tekst zanonimizowany"))
+        layout.addWidget(QLabel(L_OUTPUT_TEXT))
         layout.addWidget(self.output_text)
 
         # Wyjście: słownik mapowań
         self.output_map = QTextEdit()
         self.output_map.setReadOnly(True)
-        layout.addWidget(QLabel("Słownik mapowań"))
+        layout.addWidget(QLabel(L_SUBSTITUTION_MAP))
         layout.addWidget(self.output_map)
 
         # Przyciski pobierania
-        self.save_map_btn = QPushButton("Zapisz słownik mapowań")
+        self.save_map_btn = QPushButton(L_SAVE_MAP_BTN)
         self.save_map_btn.clicked.connect(self.save_map)
         layout.addWidget(self.save_map_btn)
 
-        self.save_text_btn = QPushButton("Zapisz tekst anonimizowany")
+        self.save_text_btn = QPushButton(L_SAVE_TEXT_BTN)
         self.save_text_btn.clicked.connect(self.save_text)
         layout.addWidget(self.save_text_btn)
 

@@ -3,9 +3,11 @@ import os
 from core.anonymizer import anonymize_text
 from .file_io import read_file, write_file, save_map_dict
 from utils.log import setup_logger
+from core.branding import APP_DESCRIPTION, VERSION
 
 def main():
-    parser = argparse.ArgumentParser(description="Anonymize documents from the command line.")
+    parser = argparse.ArgumentParser(description=APP_DESCRIPTION)
+    parser.add_argument('-v', '--version', action='version', version=f'%(prog)s {VERSION}')
     parser.add_argument("-i", "--input", required=True, help="Path to the source file.")
     parser.add_argument("-o", "--output", help="Path to the output anonymized file. Defaults to <input>.anon.<ext>")
     parser.add_argument("--profile", default="pseudonymized", choices=["pseudonymized", "gdpr", "llm-safe"],

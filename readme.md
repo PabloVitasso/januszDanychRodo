@@ -1,6 +1,6 @@
-[Pełna specyfikacja projektu (BRD)](readme-BRD.md)
+[Pełna specyfikacja projektu (BRD)](resources/readme-BRD.md)
 
-# Janusz Danych Rodo - Wersja 0.3
+# Janusz Danych Rodo
 
 Proste narzędzie do anonimizacji i pseudonimizacji dokumentów, stworzone z myślą o ochronie danych wrażliwych w polskich umowach i pismach urzędowych.
 
@@ -66,7 +66,7 @@ python3 janusz-pyside.py
 
 ### 3. Interfejs Webowy (Gradio)
 
-Umożliwia pracę przez przeglądarkę internetową, idealny do demonstracji i zdalnego dostępu.
+Umożliwia pracę przez przeglądarkę internetową, idealny do demonstracji
 
 **Uruchomienie:**
 ```bash
