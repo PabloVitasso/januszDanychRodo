@@ -1,5 +1,3 @@
-[Pełna specyfikacja projektu (BRD)](resources/readme-BRD.md)
-
 # Janusz Danych Rodo
 
 Proste narzędzie do anonimizacji dokumentów, stworzone z myślą o ochronie danych wrażliwych w polskich umowach i pismach urzędowych.
@@ -7,6 +5,8 @@ Proste narzędzie do anonimizacji dokumentów, stworzone z myślą o ochronie da
 Aplikacja zamienia zidentyfikowane dane wrażliwe (jak nazwiska, numery PESEL, adresy) na unikalne znaczniki (np. `__PERSON_0__`, `__PESEL_0__`). Dodatkowo generowany jest plik z mapą tokenów, który pozwala na odwrócenie tego procesu.
 
 **Uwaga:** Aby zachować zgodność z RODO, plik z mapą tokenów nie powinien być udostępniany razem z zanonimizowanym dokumentem, gdyż umożliwia on odtworzenie oryginalnych danych.
+
+[Pełna specyfikacja projektu (BRD)](resources/readme-BRD.md)
 
 ## Instalacja
 
@@ -60,6 +60,8 @@ Spowoduje to utworzenie pliku `umowa.anon.txt` ze zanonimizowaną treścią oraz
 ### 2. Aplikacja Desktopowa (PySide6)
 
 Graficzny interfejs użytkownika do pracy na pojedynczych plikach.
+
+![Zrzut ekranu aplikacji](resources/img/0.1/janusz-pyside.png)
 
 **Uruchomienie:**
 ```bash
