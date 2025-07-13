@@ -23,7 +23,7 @@ def setup_logger(input_filename: str = "session"):
         logging.root.removeHandler(handler)
         
     logging.basicConfig(
-        level=logging.DEBUG,
+        level=logging.INFO,
         format='%(asctime)s - %(levelname)s - %(message)s',
         filename=log_filepath,
         filemode='w'

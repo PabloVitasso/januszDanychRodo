@@ -1,25 +1,25 @@
 TO NIE SĄ PRAWDZI
-Umowa 1 - Działka pod zabudowę
+ Umowa 1 - Działka pod zabudowę
 
 UMOWA KUPNA-SPRZEDAŻY NIERUCHOMOŚCI
 
-<PERSON_10> w dniu <DATE_0> w <LOCATION_5> pomiędzy:
+__PERSON_9__ w dniu __DATE_0__ w __LOCATION_5__ pomiędzy:
 
-SPRZEDAJĄCYM: <PERSON_0>, ur. <DATE_1>, PESEL <PESEL_0>, zamieszkały w <LOCATION_5> przy ul. Słowackiego 45/12, 30-001 <LOCATION_2>
+SPRZEDAJĄCYM: __PERSON_0__, ur. __DATE_1__, PESEL __PESEL_0__, zamieszkały w __LOCATION_5__ przy __STREET_ADDRESS_0__, __POST_CODE_0__ __LOCATION_2__
 
-KUPUJĄCYM: <PERSON_1>, ur. <DATE_2>, PESEL <PESEL_1>, zamieszkała w <LOCATION_25> przy ul. Marszałkowska 123/45, 00-001 <LOCATION_26>
+KUPUJĄCYM: __PERSON_1__, ur. __DATE_2__, PESEL __PESEL_1__, zamieszkała w __LOCATION_25__ przy __STREET_ADDRESS_1__, __POST_CODE_1__ __LOCATION_26__
 
 § 1 PRZEDMIOT UMOWY
-Sprzedający sprzedaje, a Kupujący kupuje nieruchomość gruntową położoną w <LOCATION_5>, obręb geodezyjny <LOCATION_6>, działka nr 1247/15, o powierzchni 1.247 m² (jeden tysiąc dwieście czterdzieści siedem metrów kwadratowych), stanowiącą własność Sprzedającego.
+Sprzedający sprzedaje, a Kupujący kupuje nieruchomość gruntową położoną w __LOCATION_5__, obręb geodezyjny __LOCATION_6__, działka nr __LAND_PLOT_0__, o powierzchni __AREA_0__, stanowiącą własność Sprzedającego.
 
 § 2 KSIĘGA WIECZYSTA
-Nieruchomość wpisana jest do księgi wieczystej <ORGANIZATION_6> nr <<ORGANIZATION_6>_0> prowadzonej przez <ORGANIZATION_0> dla <LOCATION_7>-<LOCATION_8>.
+Nieruchomość wpisana jest do księgi wieczystej __ORGANIZATION_6__ nr ____ORGANIZATION_6___0__ prowadzonej przez __ORGANIZATION_0__ dla __LOCATION_7__-__LOCATION_8__.
 
 § 3 CENA
-Cena sprzedaży wynosi <MONEY_0> (osiemset pięćdziesiąt tysięcy złotych).
+Cena sprzedaży wynosi __MONEY_0__ (__MONEY_TEXT_0__).
 
 § 4 PŁATNOŚĆ
-Kupujący wpłacił zadatek w wysokości <MONEY_1> (osiemdziesiąt pięć tysięcy złotych) w dniu <DATE_3>. Pozostała kwota <MONEY_2> (siedemset sześćdziesiąt pięć tysięcy złotych) zostanie zapłacona do dnia <DATE_4>.
+Kupujący wpłacił zadatek w wysokości __MONEY_1__ (__MONEY_TEXT_1__) w dniu __DATE_3__. Pozostała kwota __MONEY_2__ (__MONEY_TEXT_2__) zostanie zapłacona do dnia __DATE_4__.
 
 ---
 
@@ -27,23 +27,23 @@ Kupujący wpłacił zadatek w wysokości <MONEY_1> (osiemdziesiąt pięć tysię
 
 UMOWA KUPNA-SPRZEDAŻY LOKALU MIESZKALNEGO
 
-<PERSON_10> w dniu <DATE_5> w <LOCATION_14> pomiędzy:
+__PERSON_9__ w dniu __DATE_5__ w __LOCATION_14__ pomiędzy:
 
-SPRZEDAJĄCYM: <PERSON_2>, ur. <DATE_6>, PESEL <PESEL_2>, zamieszkały w <LOCATION_14> przy ul. Długa 78/3, 80-001 <LOCATION_11>
+SPRZEDAJĄCYM: __PERSON_2__, ur. __DATE_6__, PESEL __PESEL_2__, zamieszkały w __LOCATION_14__ przy __STREET_ADDRESS_2__, __POST_CODE_2__ __LOCATION_11__
 
-KUPUJĄCYM: <PERSON_3>, ur. <DATE_7>, PESEL <PESEL_3>, zamieszkała w <LOCATION_12> przy ul. Bohaterów Monte Cassino 12/7, 81-001 <LOCATION_13>
+KUPUJĄCYM: __PERSON_3__, ur. __DATE_7__, PESEL __PESEL_3__, zamieszkała w __LOCATION_12__ przy __STREET_ADDRESS_3__, __POST_CODE_3__ __LOCATION_13__
 
 § 1 PRZEDMIOT UMOWY
-Sprzedający sprzedaje, a Kupujący kupuje lokal mieszkalny nr 15 o powierzchni użytkowej 67,50 m² (sześćdziesiąt siedem i pół metra kwadratowego), położony w budynku przy ul. Wałowa 23 w <LOCATION_14>, wraz z udziałem w nieruchomości wspólnej wynoszącym 45/1000 (czterdzieści pięć tysięcznych) części.
+Sprzedający sprzedaje, a Kupujący kupuje lokal mieszkalny nr 15 o powierzchni użytkowej __AREA_1__, położony w budynku przy __STREET_ADDRESS_4__ w __LOCATION_14__, wraz z udziałem w nieruchomości wspólnej wynoszącym __LAND_PLOT_1__ (czterdzieści pięć tysięcznych) części.
 
 § 2 KSIĘGA WIECZYSTA
-Nieruchomość wpisana jest do księgi wieczystej <ORGANIZATION_6> nr <<ORGANIZATION_6>_1> prowadzonej przez <ORGANIZATION_1>.
+Nieruchomość wpisana jest do księgi wieczystej __ORGANIZATION_6__ nr ____ORGANIZATION_6___1__ prowadzonej przez __ORGANIZATION_1__.
 
 § 3 CENA
-Cena sprzedaży wynosi <MONEY_3> (jeden milion trzysta pięćdziesiąt tysięcy złotych).
+Cena sprzedaży wynosi __MONEY_3__ (__MONEY_TEXT_3__).
 
 § 4 PŁATNOŚĆ
-Kupujący wpłacił zaliczkę w wysokości <MONEY_4> (dwieście siedemdziesiąt tysięcy złotych) w dniu <DATE_8>. Pozostała kwota zostanie uregulowana kredytem hipotecznym.
+Kupujący wpłacił zaliczkę w wysokości __MONEY_4__ (__MONEY_TEXT_4__) w dniu __DATE_8__. Pozostała kwota zostanie uregulowana kredytem hipotecznym.
 
 ---
 
@@ -51,20 +51,20 @@ Kupujący wpłacił zaliczkę w wysokości <MONEY_4> (dwieście siedemdziesiąt 
 
 UMOWA KUPNA-SPRZEDAŻY GRUNTU ROLNEGO
 
-<PERSON_10> w dniu 10 października 2024 roku w <LOCATION_17> pomiędzy:
+__PERSON_9__ w dniu 10 października 2024 roku w __LOCATION_17__ pomiędzy:
 
-SPRZEDAJĄCYM: <PERSON_4>, ur. <DATE_9>, PESEL <PESEL_4>, zamieszkały w miejscowości <LOCATION_20> przy ul. Rynek 5, 24-120 <LOCATION_20>
+SPRZEDAJĄCYM: __PERSON_4__, ur. __DATE_9__, PESEL __PESEL_4__, zamieszkały w miejscowości __LOCATION_20__ przy __STREET_ADDRESS_5__, __POST_CODE_4__ __LOCATION_20__
 
-KUPUJĄCYM: <PERSON_6>, ur. <DATE_10>, PESEL <PESEL_5>, zamieszkały w <LOCATION_17> przy ul. Krakowskie Przedmieście 67/2, 20-001 <LOCATION_18>
+KUPUJĄCYM: __PERSON_6__, ur. __DATE_10__, PESEL __PESEL_5__, zamieszkały w __LOCATION_17__ przy __STREET_ADDRESS_6__, __POST_CODE_5__ __LOCATION_18__
 
 § 1 PRZEDMIOT UMOWY
-Sprzedający sprzedaje, a Kupujący kupuje grunt rolny położony w miejscowości <LOCATION_21>, gmina <LOCATION_20>, obręb geodezyjny <LOCATION_21>, działki nr 124/3, 124/4, 125/1 o łącznej powierzchni 3,85 ha (trzy hektary osiemdziesiąt pięć arów).
+Sprzedający sprzedaje, a Kupujący kupuje grunt rolny położony w miejscowości __LOCATION_21__, gmina __LOCATION_20__, obręb geodezyjny __LOCATION_21__, działki nr __LAND_PLOT_2__, __LAND_PLOT_3__, __LAND_PLOT_4__ o łącznej powierzchni __AREA_2__.
 
 § 2 KSIĘGA WIECZYSTA
-Nieruchomości wpisane są do księgi wieczystej <ORGANIZATION_6> nr <<ORGANIZATION_6>_2> prowadzonej przez <ORGANIZATION_2>.
+Nieruchomości wpisane są do księgi wieczystej __ORGANIZATION_6__ nr ____ORGANIZATION_6___2__ prowadzonej przez __ORGANIZATION_2__.
 
 § 3 CENA
-Cena sprzedaży wynosi <MONEY_5> (trzysta osiemdziesiąt pięć tysięcy złotych).
+Cena sprzedaży wynosi __MONEY_5__ (__MONEY_TEXT_5__).
 
 § 4 PŁATNOŚĆ
 Płatność nastąpi jednorazowo w dniu podpisania aktu notarialnego.
@@ -75,23 +75,23 @@ Płatność nastąpi jednorazowo w dniu podpisania aktu notarialnego.
 
 UMOWA KUPNA-SPRZEDAŻY LOKALU UŻYTKOWEGO
 
-<PERSON_10> w dniu <DATE_11> w <LOCATION_27> pomiędzy:
+__PERSON_9__ w dniu __DATE_11__ w __LOCATION_27__ pomiędzy:
 
-SPRZEDAJĄCYM: <PERSON_8>, ur. <DATE_12>, PESEL <PESEL_6>, zamieszkała w <LOCATION_27> przy ul. Św. <PERSON_9>, 61-001 <LOCATION_24>
+SPRZEDAJĄCYM: __PERSON_8__, ur. __DATE_12__, PESEL __PESEL_6__, zamieszkała w __LOCATION_27__ przy ul. Św. Marcin __LAND_PLOT_5__, __POST_CODE_6__ __LOCATION_24__
 
-KUPUJĄCYM: Spółka z o.o. <ORGANIZATION_3> z siedzibą w <LOCATION_25> przy ul. Jerozolimskie 234, 02-001 <LOCATION_26>, NIP <NIP_0>, REGON <REGON_0>
+KUPUJĄCYM: Spółka z o.o. __ORGANIZATION_3__ z siedzibą w __LOCATION_25__ przy __STREET_ADDRESS_7__, __POST_CODE_7__ __LOCATION_26__, NIP __NIP_0__, REGON __REGON_0__
 
 § 1 PRZEDMIOT UMOWY
-Sprzedający sprzedaje, a Kupujący kupuje lokal użytkowy nr 2 o powierzchni 125,30 m² (sto dwadzieścia pięć i trzydzieści setnych metra kwadratowego), położony w budynku przy ul. Ratajczaka 56 w <LOCATION_27>, wraz z udziałem w nieruchomości wspólnej wynoszącym 78/1000 (siedemdziesiąt osiem tysięcznych) części.
+Sprzedający sprzedaje, a Kupujący kupuje lokal użytkowy nr 2 o powierzchni __AREA_3__, położony w budynku przy __STREET_ADDRESS_8__ w __LOCATION_27__, wraz z udziałem w nieruchomości wspólnej wynoszącym __LAND_PLOT_6__ (siedemdziesiąt osiem tysięcznych) części.
 
 § 2 KSIĘGA WIECZYSTA
-Nieruchomość wpisana jest do księgi wieczystej <ORGANIZATION_6> nr <<ORGANIZATION_6>_3> prowadzonej przez <ORGANIZATION_5>-Nowe Miasto.
+Nieruchomość wpisana jest do księgi wieczystej __ORGANIZATION_6__ nr ____ORGANIZATION_6___3__ prowadzonej przez __ORGANIZATION_5__-Nowe Miasto.
 
 § 3 CENA
-Cena sprzedaży wynosi <MONEY_6> (dwa miliony sześćset pięćdziesiąt tysięcy złotych).
+Cena sprzedaży wynosi __MONEY_6__ (__MONEY_TEXT_6__).
 
 § 4 PŁATNOŚĆ
-Kupujący wpłacił zadatek w wysokości <MONEY_7> (pięćset trzydzieści tysięcy złotych) w dniu <DATE_13>. Pozostała kwota zostanie uregulowana w terminie do <DATE_14>.
+Kupujący wpłacił zadatek w wysokości __MONEY_7__ (__MONEY_TEXT_7__) w dniu __DATE_13__. Pozostała kwota zostanie uregulowana w terminie do __DATE_14__.
 
 ---
 
@@ -99,20 +99,20 @@ Kupujący wpłacił zadatek w wysokości <MONEY_7> (pięćset trzydzieści tysi�
 
 UMOWA KUPNA-SPRZEDAŻY DOMU JEDNORODZINNEGO
 
-<PERSON_10> w dniu <DATE_15> w <LOCATION_33> pomiędzy:
+__PERSON_9__ w dniu __DATE_15__ w __LOCATION_33__ pomiędzy:
 
-SPRZEDAJĄCYM: <PERSON_11>, ur. <DATE_16>, PESEL <PESEL_7>, zamieszkały w <LOCATION_33> przy ul. Korfantego 34, 40-001 <LOCATION_30>
+SPRZEDAJĄCYM: __PERSON_10__, ur. __DATE_16__, PESEL __PESEL_7__, zamieszkały w __LOCATION_33__ przy __STREET_ADDRESS_9__, __POST_CODE_8__ __LOCATION_30__
 
-KUPUJĄCYM: <PERSON_12>, ur. <DATE_17>, PESEL <PESEL_8>, zamieszkała w <LOCATION_31> przy ul. Wolności 45/8, 41-001 <LOCATION_32>
+KUPUJĄCYM: __PERSON_11__, ur. __DATE_17__, PESEL __PESEL_8__, zamieszkała w __LOCATION_31__ przy __STREET_ADDRESS_10__, __POST_CODE_9__ __LOCATION_32__
 
 § 1 PRZEDMIOT UMOWY
-Sprzedający sprzedaje, a Kupujący kupuje dom jednorodzinny wraz z działką gruntu nr 678/12, o powierzchni 0,08 ha (osiem arów), położony w <LOCATION_33> przy ul. Różanej 17, obręb geodezyjny <LOCATION_34>.
+Sprzedający sprzedaje, a Kupujący kupuje dom jednorodzinny wraz z działką gruntu nr __LAND_PLOT_7__, o powierzchni __AREA_4__, położony w __LOCATION_33__ przy __STREET_ADDRESS_11__, obręb geodezyjny __LOCATION_34__.
 
 § 2 KSIĘGA WIECZYSTA
-Nieruchomość wpisana jest do księgi wieczystej <ORGANIZATION_6> nr <<ORGANIZATION_6>_4> prowadzonej przez <ORGANIZATION_7>.
+Nieruchomość wpisana jest do księgi wieczystej __ORGANIZATION_6__ nr ____ORGANIZATION_6___4__ prowadzonej przez __ORGANIZATION_7__.
 
 § 3 CENA
-Cena sprzedaży wynosi <MONEY_8> (jeden milion sto pięćdziesiąt tysięcy złotych).
+Cena sprzedaży wynosi __MONEY_8__ (__MONEY_TEXT_8__).
 
 § 4 PŁATNOŚĆ
-Kupujący wpłacił zaliczkę w wysokości <MONEY_9> (sto piętnaście tysięcy złotych) w dniu <DATE_18>. Pozostała kwota zostanie uregulowana kredytem mieszkaniowym do dnia <DATE_19>.
+Kupujący wpłacił zaliczkę w wysokości __MONEY_9__ (__MONEY_TEXT_9__) w dniu __DATE_18__. Pozostała kwota zostanie uregulowana kredytem mieszkaniowym do dnia __DATE_19__.

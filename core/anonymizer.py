@@ -19,10 +19,18 @@ except OSError:
     nlp = None
 
 def safe_substitute(text: str, substitution_dict: dict) -> str:
+    """
+    Substitutes tokens in a single pass, ensuring that replacements are handled correctly
+    even if they overlap, by processing them from longest to shortest.
+    """
+    # Sort keys by length in descending order to handle nested substitutions correctly.
+    # For example, "Jan Kowalski" should be replaced before "Jan".
     sorted_keys = sorted(substitution_dict.keys(), key=len, reverse=True)
+    
     for original in sorted_keys:
         replacement = substitution_dict[original]
         text = text.replace(original, replacement)
+        
     return text
 
 def anonymize_text(text: str, profile: str = DEFAULT_PROFILE, custom_classes: list[str] = None) -> tuple[str, dict]:
@@ -40,10 +48,11 @@ def anonymize_text(text: str, profile: str = DEFAULT_PROFILE, custom_classes: li
         for match in pattern.finditer(text):
             start, end = match.span()
             # Sprawdź, czy zakres się nie nakłada
-            if not any(start in r or end - 1 in r for r in matched_pos):
+            current_range = range(start, end)
+            if not any(max(r.start, current_range.start) < min(r.stop, current_range.stop) for r in matched_pos):
                 entity = Entity(match.group(0), class_name, start, end)
                 all_entities.append(entity)
-                matched_pos.add(range(start, end))
+                matched_pos.add(current_range)
                 logger.debug(f"Regex found: {entity}")
 
     # Krok 2: Znajdź encje z NER, ignorując te, które nakładają się na regex
@@ -75,7 +84,7 @@ def anonymize_text(text: str, profile: str = DEFAULT_PROFILE, custom_classes: li
             
             if transform_type == "tokenize":
                 count = token_counters.get(entity.type, 0)
-                substitution_dict[entity.text] = f"<{entity.type}_{count}>"
+                substitution_dict[entity.text] = f"__{entity.type}_{count}__"
                 token_counters[entity.type] = count + 1
             elif transform_type == "remove":
                 substitution_dict[entity.text] = ""
@@ -94,5 +103,5 @@ def anonymize_text(text: str, profile: str = DEFAULT_PROFILE, custom_classes: li
         substitution_dict.update(generalize_money(temp_text))
 
     anonymized_text = safe_substitute(text, substitution_dict)
-    token_map = {v: k for k, v in substitution_dict.items() if v.startswith('<')}
+    token_map = {v: k for k, v in substitution_dict.items() if v.startswith('__') and v.endswith('__')}
     return anonymized_text, token_map

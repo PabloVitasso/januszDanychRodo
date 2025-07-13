@@ -2,6 +2,7 @@
 spacy>=3.0.0
 gradio>=3.0.0
 rich>=10.0.0
+pyside6-essentials
 
 # Po instalacji powyższych pakietów,
 # pobierz model językowy dla języka polskiego:

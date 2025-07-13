@@ -1,60 +1,75 @@
-# Anonymizer Notarialny
+[Pełna specyfikacja projektu (BRD)](readme-BRD.md)
 
-**Stan projektu: MVP 1 (Minimum Viable Product)**
+# Janusz Danych Rodo - Wersja 0.3
 
-Projekt aplikacji do anonimizacji polskich aktów notarialnych. Aplikacja identyfikuje i anonimizuje dane wrażliwe, takie jak dane osobowe, numery identyfikacyjne (PESEL, NIP), adresy i inne, zgodnie z wybranym profilem anonimizacji.
+Proste narzędzie do anonimizacji i pseudonimizacji dokumentów, stworzone z myślą o ochronie danych wrażliwych w polskich umowach i pismach urzędowych.
 
-## Funkcjonalności
-
-*   **Rozpoznawanie encji**: Wykorzystuje hybrydowe podejście (Regex + NER ze spaCy) do identyfikacji danych.
-*   **Profile anonimizacji**:
-    *   `pseudonymized`: Zamienia dane na tokeny (np. `Jan Kowalski` -> `<PERSON_0>`).
-    *   `gdpr`: Generalizuje lub usuwa dane (np. `5000 zł` -> `[KWOTA]`).
-    *   `llm-safe`: Profil przygotowany do bezpiecznego przetwarzania przez duże modele językowe.
-*   **Interfejsy**:
-    *   CLI (Command Line Interface) do przetwarzania plików.
-    *   **PLANOWANE**: Web UI (Gradio) do interaktywnej anonimizacji tekstu.
-*   **Logowanie**: Zapisuje szczegółowe logi z każdej sesji do katalogu `./logs`.
+**Uwaga:** W obecnej wersji (0.3) w pełni zaimplementowano jedynie profil **pseudonimizacji**. Inne profile (anonimizacja RODO, LLM-safe) są w trakcie rozwoju.
 
 ## Instalacja
 
-1.  **Sklonuj repozytorium:**
-    ```bash
-    git clone [adres-repozytorium]
-    cd [nazwa-katalogu]
-    ```
+Aplikacja wymaga środowiska wirtualnego Python.
 
-2.  **Utwórz i aktywuj wirtualne środowisko:**
+1.  **Utwórz i aktywuj środowisko wirtualne:**
     ```bash
+    # Linux/macOS
     python3 -m venv venv
     source venv/bin/activate
+
+    # Windows
+    python -m venv venv
+    .\\venv\\Scripts\\activate
     ```
 
-3.  **Zainstaluj zależności:**
+2.  **Zainstaluj zależności:**
     ```bash
     pip install -r requirements.txt
     ```
 
-4.  **Pobierz model językowy spaCy:**
-    ```bash
-    python -m spacy download pl_core_news_lg
-    ```
+## Dostępne interfejsy
 
-## Użycie
+Projekt oferuje trzy sposoby interakcji:
 
-### Interfejs Linii Poleceń (CLI)
+### 1. Interfejs Linii Komend (CLI)
 
+Idealny do automatyzacji i przetwarzania wsadowego.
+
+**Uruchomienie:**
 ```bash
-python3 main.py cli --input-file [sciezka_do_pliku_wejsciowego] --output-file [sciezka_do_pliku_wyjsciowego] --profile [nazwa_profilu]
+python3 janusz-cli.py [OPCJE]
 ```
-*   `--input-file`: Ścieżka do pliku tekstowego do anonimizacji.
-*   `--output-file`: Ścieżka do zapisu zanonimizowanego tekstu.
-*   `--profile`: Profil anonimizacji (`pseudonymized`, `gdpr`, `llm-safe`). Domyślnie `pseudonymized`.
 
-### Interfejs Webowy (Gradio) - PLANOWANE
+**Dostępne opcj:**
+```
+-h, --help            pokaż pomoc i wyjdź
+-i INPUT, --input INPUT
+                      ścieżka do pliku źródłowego
+-o OUTPUT, --output OUTPUT
+                      ścieżka do pliku wyjściowego. Domyślnie <input>.anon.<ext>
+```
 
-Aby uruchomić interfejs webowy, uruchom polecenie:
+**Przykład:**
 ```bash
-python3 main.py web
+python3 janusz-cli.py -i ./umowa.txt
 ```
-Aplikacja będzie dostępna pod adresem `http://127.0.0.1:7860`.
+Spowoduje to utworzenie pliku `umowa.anon.txt` z pseudonimami.
+
+
+### 2. Aplikacja Desktopowa (PySide6)
+
+Graficzny interfejs użytkownika do pracy na pojedynczych plikach.
+
+**Uruchomienie:**
+```bash
+python3 janusz-pyside.py
+```
+
+### 3. Interfejs Webowy (Gradio)
+
+Umożliwia pracę przez przeglądarkę internetową, idealny do demonstracji i zdalnego dostępu.
+
+**Uruchomienie:**
+```bash
+python3 janusz-gradio.py
+```
+Aplikacja będzie dostępna pod adresem: `http://127.0.0.1:7860`

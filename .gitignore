@@ -70,3 +70,8 @@ venv.bak/
 
 # logs
 logs/
+# Pliki generowane przez testy
+tests/test_anonymizer_output.py
+tests/test_document-big.actual.txt
+# Spacy models
+models/

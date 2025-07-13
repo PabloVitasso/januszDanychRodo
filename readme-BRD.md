@@ -1,4 +1,4 @@
-# Plan Projektu: System Anonimizacji Umów Notarialnych
+# Plan Projektu: JanuszDanych Rodo
 
 Dokument ten stanowi ogólny plan wdrożenia (BRD+FRD) systemu do anonimizacji, uwzględniający specyfikację techniczną oraz kluczowe uwagi i poprawki. Jest to punkt wyjścia do szczegółowej specyfikacji kolejnych etapów prac, włączając Proof of Concept (POC) i testowanie.
 
@@ -36,7 +36,7 @@ Struktura projektu będzie modułowa, aby zapewnić elastyczność i łatwość 
 ├── tests/                 # Testy jednostkowe i integracyjne
 │   ├── test_anonymizer.py
 │   └── test_patterns.py
-├── main.py                # Punkt wejścia aplikacji
+├── januszdanych.py        # Punkt wejścia aplikacji
 └── requirements.txt       # Zależności (spaCy, Gradio, etc.)
 ```
 
@@ -59,7 +59,7 @@ System musi identyfikować i przetwarzać następujące kategorie danych, łącz
 3.  **Lokalizacje geograficzne**: Województwa, regiony.
 4.  **Identyfikatory**: PESEL, NIP, REGON.
 5.  **Dane nieruchomości**: Numery ksiąg wieczystych (KW), numery działek.
-6.  **Wartości liczbowe**: Powierzchnie, kwoty.
+6.  **Wartości liczbowe i słowne**: Powierzchnie, kwoty (w tym zapisane słownie, np. "sto tysięcy złotych").
 7.  **Daty**: Daty dzienne, miesięczne, roczne.
 8.  **Styl i frazy**: Usuwanie specyficznych formułek ("Ja, notariusz...").
 9.  **Metadane**: Usuwanie danych EXIF z osadzonych plików (w przyszłości).
