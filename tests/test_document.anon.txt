@@ -1,0 +1,8 @@
+To jest umowa z dnia __DATE_0__.
+Stronami są __PERSON_0__ (PESEL: __PESEL_0__) zamieszkały w __LOCATION_0__, __STREET_ADDRESS_0__, __POST_CODE_0__,
+oraz firma __ORGANIZATION_0__ z NIP __NIP_0__ i REGON __REGON_0__.
+
+Nieruchomość znajduje się w __LOCATION_1__, księga wieczysta to __KW_0__, numer działki __LAND_PLOT_0__.
+Cena sprzedaży wynosi __MONEY_0__.
+
+Akt sporządziła notariusz __PERSON_1__. Stawający zapłacili gotówką 10__MONEY_1__ za usługę.

@@ -1,5 +1,6 @@
 import logging
 import os
+import sys
 from datetime import datetime
 
 def setup_logger(input_filename: str = "session"):
@@ -7,36 +8,44 @@ def setup_logger(input_filename: str = "session"):
     Konfiguruje logger do zapisu w pliku w folderze ./logs.
     Nazwa pliku logu bazuje na dacie i nazwie pliku wejściowego.
     """
-    # Utwórz folder logs, jeśli nie istnieje
+    LOG_LEVEL = logging.INFO # !!1 logging.DEBUG zapisuje DANE WRAŻLIWE do katalogu ./logs !!1
+    
     logs_dir = "logs"
     os.makedirs(logs_dir, exist_ok=True)
-
-    # Przygotuj nazwę pliku
+    
     timestamp = datetime.now().strftime("%Y%m%d%H%M")
     base_name = os.path.basename(input_filename)
     log_filename = f"{timestamp}-{base_name}.log"
     log_filepath = os.path.join(logs_dir, log_filename)
-
-    # Konfiguracja loggera
-    # Usuwamy poprzednie handlery, aby uniknąć duplikacji logów
-    for handler in logging.root.handlers[:]:
-        logging.root.removeHandler(handler)
-        
-    logging.basicConfig(
-        level=logging.INFO,
-        format='%(asctime)s - %(levelname)s - %(message)s',
-        filename=log_filepath,
-        filemode='w'
-    )
     
-    # Dodanie konsoli, aby widzieć logi na bieżąco
-    console = logging.StreamHandler()
-    console.setLevel(logging.INFO)
-    formatter = logging.Formatter('%(levelname)s - %(message)s')
-    console.setFormatter(formatter)
-    logging.getLogger('').addHandler(console)
+    # Tworzenie nowego loggera
+    logger_name = f"app_{timestamp}_{base_name}"
+    logger = logging.getLogger(logger_name)
+    logger.setLevel(LOG_LEVEL)
+    
+    # Sprawdź czy handlery już istnieją
+    if logger.handlers:
+        return logger
+    
+    # File handler
+    file_handler = logging.FileHandler(log_filepath, mode='w')
+    file_handler.setLevel(LOG_LEVEL)
+    
+    # Console handler
+    console_handler = logging.StreamHandler(sys.stdout)
+    console_handler.setLevel(LOG_LEVEL)
+    
+    # Formatters
+    file_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+    console_formatter = logging.Formatter('%(levelname)s - %(message)s')
+    
+    file_handler.setFormatter(file_formatter)
+    console_handler.setFormatter(console_formatter)
+    
+    logger.addHandler(file_handler)
+    logger.addHandler(console_handler)
+    
+    return logger
 
-    return logging.getLogger(__name__)
-
-# Inicjalizacja domyślnego loggera
+# Globalna instancja loggera
 logger = setup_logger()
