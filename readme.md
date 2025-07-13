@@ -2,9 +2,11 @@
 
 # Janusz Danych Rodo
 
-Proste narzędzie do anonimizacji i pseudonimizacji dokumentów, stworzone z myślą o ochronie danych wrażliwych w polskich umowach i pismach urzędowych.
+Proste narzędzie do anonimizacji dokumentów, stworzone z myślą o ochronie danych wrażliwych w polskich umowach i pismach urzędowych.
 
-**Uwaga:** W obecnej wersji (0.3) w pełni zaimplementowano jedynie profil **pseudonimizacji**. Inne profile (anonimizacja RODO, LLM-safe) są w trakcie rozwoju.
+Aplikacja zamienia zidentyfikowane dane wrażliwe (jak nazwiska, numery PESEL, adresy) na unikalne znaczniki (np. `__PERSON_0__`, `__PESEL_0__`). Dodatkowo generowany jest plik z mapą tokenów, który pozwala na odwrócenie tego procesu.
+
+**Uwaga:** Aby zachować zgodność z RODO, plik z mapą tokenów nie powinien być udostępniany razem z zanonimizowanym dokumentem, gdyż umożliwia on odtworzenie oryginalnych danych.
 
 ## Instalacja
 
@@ -52,7 +54,7 @@ python3 janusz-cli.py [OPCJE]
 ```bash
 python3 janusz-cli.py -i ./umowa.txt
 ```
-Spowoduje to utworzenie pliku `umowa.anon.txt` z pseudonimami.
+Spowoduje to utworzenie pliku `umowa.anon.txt` ze zanonimizowaną treścią oraz `umowa.anon.map.json` z mapą tokenów.
 
 
 ### 2. Aplikacja Desktopowa (PySide6)

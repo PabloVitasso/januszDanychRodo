@@ -2,7 +2,7 @@ from typing import NamedTuple, Dict, Set
 import spacy
 from .patterns import PATTERNS
 from .transforms import generalize_money, generalize_dates
-from .profile_config import PROFILES, DEFAULT_PROFILE
+from .config import DEFAULT_CLASSES, DEFAULT_TRANSFORMATIONS
 from utils.log import logger
 
 class Entity(NamedTuple):
@@ -33,10 +33,9 @@ def safe_substitute(text: str, substitution_dict: dict) -> str:
         
     return text
 
-def anonymize_text(text: str, profile: str = DEFAULT_PROFILE, custom_classes: list[str] = None) -> tuple[str, dict]:
-    profile_config = PROFILES.get(profile, PROFILES[DEFAULT_PROFILE])
-    enabled_classes = custom_classes if custom_classes is not None else profile_config["classes"]
-    transformations = profile_config.get("transformations", {})
+def anonymize_text(text: str, custom_classes: list[str] = None) -> tuple[str, dict]:
+    enabled_classes = custom_classes if custom_classes is not None else DEFAULT_CLASSES
+    transformations = DEFAULT_TRANSFORMATIONS
     
     all_entities: list[Entity] = []
     
@@ -96,12 +95,6 @@ def anonymize_text(text: str, profile: str = DEFAULT_PROFILE, custom_classes: li
                 elif entity.type == "DATE":
                     substitution_dict.update(generalize_dates(entity.text))
     
-    if profile == 'gdpr':
-        # Dodatkowe generalizacje dla GDPR
-        temp_text = safe_substitute(text, substitution_dict)
-        substitution_dict.update(generalize_dates(temp_text))
-        substitution_dict.update(generalize_money(temp_text))
-
     anonymized_text = safe_substitute(text, substitution_dict)
     token_map = {v: k for k, v in substitution_dict.items() if v.startswith('__') and v.endswith('__')}
     return anonymized_text, token_map

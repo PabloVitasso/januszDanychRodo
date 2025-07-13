@@ -3,13 +3,12 @@ import json
 
 from PySide6.QtWidgets import (
     QApplication, QWidget, QLabel, QVBoxLayout, QPushButton,
-    QTextEdit, QFileDialog, QComboBox, QMessageBox
+    QTextEdit, QFileDialog, QMessageBox
 )
 
 from core.anonymizer import anonymize_text
-from core.profile_config import PROFILES
 from core.branding import (
-    APP_TITLE, L_FILE_UPLOAD, L_PROFILE, L_ANONYMIZE_BTN, L_OUTPUT_TEXT,
+    APP_TITLE, L_FILE_UPLOAD, L_ANONYMIZE_BTN, L_OUTPUT_TEXT,
     L_SUBSTITUTION_MAP, L_SAVE_MAP_BTN, L_SAVE_TEXT_BTN
 )
 
@@ -27,11 +26,6 @@ class AnonymizerGUI(QWidget):
         self.load_button.clicked.connect(self.load_file)
         layout.addWidget(self.load_button)
 
-        # Profil anonimizacji
-        self.profile_dropdown = QComboBox()
-        self.profile_dropdown.addItems(PROFILES.keys())
-        layout.addWidget(QLabel(L_PROFILE))
-        layout.addWidget(self.profile_dropdown)
 
         # Przycisk anonimizacji
         self.anon_button = QPushButton(L_ANONYMIZE_BTN)
@@ -76,8 +70,7 @@ class AnonymizerGUI(QWidget):
             QMessageBox.warning(self, "Błąd", "Nie wczytano pliku.")
             return
 
-        profile = self.profile_dropdown.currentText()
-        self.anonymized_text, self.substitution_map = anonymize_text(self.file_content, profile)
+        self.anonymized_text, self.substitution_map = anonymize_text(self.file_content)
 
         self.output_text.setText(self.anonymized_text)
         self.output_map.setText(json.dumps(self.substitution_map, indent=2, ensure_ascii=False))

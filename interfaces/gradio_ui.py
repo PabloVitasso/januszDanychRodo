@@ -3,9 +3,8 @@ import gradio as gr
 from core.anonymizer import anonymize_text
 import tempfile
 import json
-from core.profile_config import PROFILES
 from core.branding import (
-    APP_TITLE, L_FILE_UPLOAD, L_PROFILE, L_ANONYMIZE_BTN, L_OUTPUT_TEXT,
+    APP_TITLE, L_FILE_UPLOAD, L_ANONYMIZE_BTN, L_OUTPUT_TEXT,
     L_SUBSTITUTION_MAP, L_DOWNLOAD_FILES
 )
 
@@ -36,13 +35,13 @@ class AnonymizerInterface:
             return tmp.name
     
     @staticmethod
-    def process_file(file_obj, profile):
+    def process_file(file_obj):
         """Przetwarza plik i zwraca wyniki anonimizacji"""
         if file_obj is None:
             return "Proszę wgrać plik.", "Brak wyników.", None, None
         
         original_text = file_obj.decode('utf-8')
-        anonymized_text, substitution_map = anonymize_text(original_text, profile)
+        anonymized_text, substitution_map = anonymize_text(original_text)
         
         # Tworzenie plików do pobrania
         map_file_path = AnonymizerInterface.create_temp_file(
@@ -80,11 +79,6 @@ def create_ui():
                 type="binary",
                 file_count="single"
             )
-            profile_dropdown = gr.Dropdown(
-                choices=list(PROFILES.keys()),
-                value="pseudonymized",
-                label=L_PROFILE
-            )
             submit_btn = gr.Button(L_ANONYMIZE_BTN)
         
         # Wiersz 2: Tekst zanonimizowany
@@ -108,7 +102,7 @@ def create_ui():
         
         submit_btn.click(
             fn=AnonymizerInterface.process_file,
-            inputs=[file_input, profile_dropdown],
+            inputs=[file_input],
             outputs=[output_text, output_map, download_map_btn, download_text_btn]
         )
         
